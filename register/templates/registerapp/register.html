@@ -1,0 +1,16 @@
+{% extends 'registerapp/base.html' %}
+{% block body_block %}
+<div class="container">
+  {% if registerd%}
+  <h1>THANK YOU</h1>
+  {%else%}
+  <form enctype="multipart/form-data"  method="POST">
+    {{user_form.as_p}}
+    {{profile_form.as_p}}
+    {% csrf_token %}
+    <input type="submit" name="" value="Register">
+  </form>
+
+</div>
+{%endif%}
+{% endblock %}
